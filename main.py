@@ -1,7 +1,13 @@
 import tkinter as tk
 from tkinter import filedialog
+from tkinter import ttk
 from tkinter.filedialog import askopenfile
 from PIL import Image, ImageTk
+
+
+# TODO watermark position
+# TODO default watermark
+# TODO gui
 
 
 def upload_file():
@@ -35,23 +41,23 @@ window.title("Watermark your photo")
 window.config(padx=25, pady=10)
 
 my_font1=('times', 18, 'bold')
-l1 = tk.Label(window, text='Add photo to watermark', width=30, font=my_font1)
+l1 = tk.ttk.Label(window, text='Add photo to watermark', width=30, font=my_font1)
 l1.grid(row=1, column=1)
-l1.config(padx=10, pady=5)
 
-b1 = tk.Button(window, text='Upload File',
+
+b1 = tk.ttk.Button(window, text='Upload File',
    width=20, command=lambda: upload_file())
 b1.grid(row=2, column=0)
-b1.config(padx=10, pady=5)
 
-b2 = tk.Button(window, text='Upload Watermark',
+
+b2 = tk.ttk.Button(window, text='Upload Watermark',
    width=20, command=lambda: upload_watermark())
 b2.grid(row=2, column=1)
-b2.config(padx=10, pady=5)
 
-b3 = tk.Button(window, text='Merge',
+
+b3 = tk.ttk.Button(window, text='Merge',
    width=20, command=lambda: merge(img=img, watermark=watermark))
 b3.grid(row=2, column=2)
-b3.config(padx=10, pady=5)
+
 
 window.mainloop()
